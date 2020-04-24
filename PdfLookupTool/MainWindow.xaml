@@ -1,0 +1,28 @@
+﻿<Window x:Class="PdfLookupTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PdfLookupTool"
+        mc:Ignorable="d"
+        Title="PDF Lookup tool" Height="450" Width="800">
+    <StackPanel>
+        <DockPanel Height="381" LastChildFill="False" Margin="0,10,0,0">
+            <StackPanel Width="160">
+                <Button Content="Buscar" Click="Button_Click" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,5,5,0" Height="30"/>
+                <Button Content="Seleccionar Folder de PDFs" HorizontalAlignment="Stretch" FontStretch="Condensed" Click="Button_Click_1" Margin="5,16,5,0" Height="28"/>
+                <StackPanel Name="opener" Margin="10,15,10,0" />
+            </StackPanel>
+            <StackPanel Width="400" Uid="search_terms">
+                <Label Content="Intrductir terminos de busqueda:" />
+                <TextBox x:Name="search_terms" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Height="98" Width="400" InputMethod.IsInputMethodEnabled="True"/>
+                <Label Content="Resultados:" />
+                <TextBlock x:Name="search_results"  TextWrapping="Wrap" Height="247.7" ScrollViewer.HorizontalScrollBarVisibility="Visible" Focusable="True" />
+            </StackPanel>
+            <Border BorderThickness="1" BorderBrush="Black" Width="200">
+                <TextBlock x:Name="selected_pdfs"  Text="" TextWrapping="Wrap"  Margin="5,5,5,5"/>
+            </Border>
+        </DockPanel>
+    </StackPanel>
+
+</Window>
